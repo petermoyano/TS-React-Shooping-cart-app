@@ -1,5 +1,9 @@
-import { Navbar as NavbarBs } from "react-bootstrap";
+import { Container, Navbar as NavbarBs } from "react-bootstrap";
 
 export default function Navbar() {
-    return <NavbarBs className="dark">NavBar</NavbarBs>;
+    return (
+        <Container>
+            <NavbarBs className="bg-white shadow-sm mb-3">NavBar</NavbarBs>
+        </Container>
+    );
 }
