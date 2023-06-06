@@ -1,27 +1,18 @@
-import { ReactNode, createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
+import {
+    ShoppingCartContextTypes,
+    CartItem,
+    ShoppingCartProviderProps,
+} from "./types";
 
-type ShoppingCartProviderProps = {
-    children: ReactNode;
-};
-type CartItem = {
-    id: number;
-    quantity: number;
-};
-type ShoppingCartContext = {
-    getItemQuantity: (id: number) => number;
-    increaseQuantity: (id: number) => void;
-    decreaseQuantity: (id: number) => void;
-    removeFromCart: (id: number) => void;
-};
-
-const ShoppingCartContext = createContext({} as ShoppingCartContext);
+const ShoppingCartContext = createContext({} as ShoppingCartContextTypes);
 
 export function useShoppingCart() {
     return useContext(ShoppingCartContext);
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-    const [cartItems, setCartItems] = useState<CartItem>([]);
+    const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
     function getItemQuantity(id: number) {
         return (
@@ -57,9 +48,20 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         });
     }
 
+    function removeFromCart(id: number) {
+        return setCartItems((prevItems: CartItem[]) => {
+            return prevItems.filter((item) => item.id !== id);
+        });
+    }
+
     return (
         <ShoppingCartContext.Provider
-            value={{ getItemQuantity, increaseQuantity, decreaseQuantity }}
+            value={{
+                getItemQuantity,
+                increaseQuantity,
+                decreaseQuantity,
+                removeFromCart,
+            }}
         >
             {children}
         </ShoppingCartContext.Provider>
