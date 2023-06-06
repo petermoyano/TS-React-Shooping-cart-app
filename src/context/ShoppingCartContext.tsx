@@ -19,7 +19,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
             cartItems.find((item: CartItem) => id === item.id)?.quantity || 0
         );
     }
-
     function increaseQuantity(id: number) {
         setCartItems((prevItems: CartItem[]) => {
             if (prevItems.find((item) => item.id === id) === undefined) {
@@ -47,13 +46,11 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
             });
         });
     }
-
     function removeFromCart(id: number) {
         return setCartItems((prevItems: CartItem[]) => {
             return prevItems.filter((item) => item.id !== id);
         });
     }
-
     return (
         <ShoppingCartContext.Provider
             value={{
@@ -61,6 +58,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
                 increaseQuantity,
                 decreaseQuantity,
                 removeFromCart,
+                cartItems,
+                setCartItems,
             }}
         >
             {children}

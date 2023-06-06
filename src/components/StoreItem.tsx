@@ -1,6 +1,5 @@
 import { Button, Card } from "react-bootstrap";
 import { formatPrice } from "../utilities/formatPrice";
-import { useState } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 type StoreItemsProps = {
@@ -16,6 +15,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
         increaseQuantity,
         decreaseQuantity,
         removeFromCart,
+        cartItems,
     } = useShoppingCart();
     const quantity = getItemQuantity(id);
     return (
