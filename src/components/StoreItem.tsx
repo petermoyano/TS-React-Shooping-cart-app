@@ -15,7 +15,6 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
         increaseQuantity,
         decreaseQuantity,
         removeFromCart,
-        cartItems,
     } = useShoppingCart();
     const quantity = getItemQuantity(id);
     return (
@@ -50,7 +49,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
                                 style={{ gap: ".5rem" }}
                             >
                                 <div
-                                    className="d--flex align-items-center justify-content-center"
+                                    className="d-flex align-items-center justify-content-center"
                                     style={{ gap: ".5rem" }}
                                 >
                                     <Button

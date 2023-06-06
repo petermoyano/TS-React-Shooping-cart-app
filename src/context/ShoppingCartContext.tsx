@@ -4,6 +4,7 @@ import {
     CartItem,
     ShoppingCartProviderProps,
 } from "./types";
+import { ShoppingCart } from "../components/ShoppingCart";
 
 const ShoppingCartContext = createContext({} as ShoppingCartContextTypes);
 
@@ -12,7 +13,15 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
+    const [isOpen, setIsOpen] = useState(false);
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const totalCartQuantity = cartItems.reduce(
+        (quantity, item) => item.quantity + quantity,
+        0
+    );
+
+    const openCart = () => setIsOpen(true);
+    const closeCart = () => setIsOpen(false);
 
     function getItemQuantity(id: number) {
         return (
@@ -59,10 +68,13 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
                 decreaseQuantity,
                 removeFromCart,
                 cartItems,
-                setCartItems,
+                totalCartQuantity,
+                openCart,
+                closeCart,
             }}
         >
             {children}
+            <ShoppingCart isOpen={isOpen} />
         </ShoppingCartContext.Provider>
     );
 }
