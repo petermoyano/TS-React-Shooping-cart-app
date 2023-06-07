@@ -5,6 +5,7 @@ import {
     ShoppingCartProviderProps,
 } from "./types";
 import { ShoppingCart } from "../components/ShoppingCart";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ShoppingCartContext = createContext({} as ShoppingCartContextTypes);
 
@@ -14,7 +15,10 @@ export function useShoppingCart() {
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+        "shopping-cart",
+        []
+    );
     const totalCartQuantity = cartItems.reduce(
         (quantity, item) => item.quantity + quantity,
         0
@@ -24,9 +28,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     const closeCart = () => setIsOpen(false);
 
     function getItemQuantity(id: number) {
-        return (
-            cartItems.find((item: CartItem) => id === item.id)?.quantity || 0
-        );
+        return cartItems.find((item) => id === item.id)?.quantity || 0;
     }
     function increaseQuantity(id: number) {
         setCartItems((prevItems: CartItem[]) => {

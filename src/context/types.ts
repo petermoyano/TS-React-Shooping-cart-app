@@ -1,4 +1,4 @@
-import { ReactNode, SetStateAction } from "react";
+import { ReactNode } from "react";
 
 export type ShoppingCartProviderProps = {
     children: ReactNode;
