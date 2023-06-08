@@ -1,6 +1,7 @@
 import { Button, Card } from "react-bootstrap";
 import { formatPrice } from "../utilities/formatPrice";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type StoreItemsProps = {
     id: number;
@@ -20,12 +21,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
     return (
         <>
             <Card className="h-100">
-                <Card.Img
-                    variant="top"
-                    src={imgUrl}
-                    height="200px"
-                    style={{ objectFit: "cover" }}
-                ></Card.Img>
+                <LazyLoadImage src={`${imgUrl}`}></LazyLoadImage>
                 <Card.Body className="d-flex flex-column">
                     <Card.Title className="d-flex flex-column">
                         <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
