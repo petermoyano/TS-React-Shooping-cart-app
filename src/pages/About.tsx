@@ -1,3 +1,7 @@
 export function About() {
-    return <h1>About</h1>;
+    return (
+        <>
+            <h1>I'm Pedro Moyano, React-Node developer at Solvd Inc.</h1>
+        </>
+    );
 }
