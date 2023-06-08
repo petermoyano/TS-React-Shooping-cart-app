@@ -18,7 +18,9 @@ export function Home() {
                     <b>Code splitting</b>
                 </li>
                 <li>
-                    <b>Lazy loading</b>
+                    <b>Lazy loading</b>: The images are large and specially not
+                    sized optimized for the web. I wanted to see how lazy
+                    loading would work with them.
                 </li>
             </ul>
         </>

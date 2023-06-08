@@ -25,8 +25,68 @@
     },
     {
         "id": 5,
-        "name": "Chinesse phone",
+        "name": "Chineese phone",
         "price": 400,
         "imgUrl": "/images/vojtech-bruzek-J82GxqnwKSs-unsplash.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Laptop",
+        "price": 1299,
+        "imgUrl": "/images/kari-shea-1SAnrIxw5OY-unsplash.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Smartwatch",
+        "price": 199,
+        "imgUrl": "/images/lloyd-dirks-0vsk2_9dkqo-unsplash.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Bluetooth Speaker",
+        "price": 79,
+        "imgUrl": "/images/nejc-soklic-g5Y5kjOwGwQ-unsplash.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Headphones",
+        "price": 149,
+        "imgUrl": "/images/icons8-team-7LNatQYMzm4-unsplash.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Tablet",
+        "price": 699,
+        "imgUrl": "/images/roberto-nickson-hLgYtX0rPgw-unsplash.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Camera",
+        "price": 899,
+        "imgUrl": "/images/andrew-hutchings-W2Dta_Yiwfw-unsplash.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Gaming Console",
+        "price": 499,
+        "imgUrl": "/images/louis-philippe-poitras-WMMh6BtmTMo-unsplash.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Smart Home Device",
+        "price": 199,
+        "imgUrl": "/images/onur-binay-uhJgh4FHi6I-unsplash.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Wireless Earbuds",
+        "price": 129,
+        "imgUrl": "/images/theregisti-nVHjpMbCPGI-unsplash.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Fitness Tracker",
+        "price": 79,
+        "imgUrl": "/images/nikita-kostrykin-5--lSW0MiE0-unsplash.jpg"
     }
 ]
