@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -8,4 +11,8 @@ export default defineConfig({
     },
     optimizeDeps: { disabled: false },
     plugins: [react()],
+    test: {
+        environment: "jsdom",
+        globals: true,
+    },
 });
