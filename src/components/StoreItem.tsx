@@ -17,6 +17,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
         decreaseQuantity,
         removeFromCart,
     } = useShoppingCart();
+    console.log("HELO, ", typeof getItemQuantity);
     const quantity = getItemQuantity(id);
     return (
         <>
@@ -36,6 +37,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
                             <Button
                                 className="w-100"
                                 onClick={() => increaseQuantity(id)}
+                                variant="success"
                             >
                                 + Add to cart
                             </Button>
@@ -50,6 +52,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
                                 >
                                     <Button
                                         onClick={() => decreaseQuantity(id)}
+                                        variant="info"
                                     >
                                         -
                                     </Button>
@@ -59,6 +62,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemsProps) {
                                     </div>
                                     <Button
                                         onClick={() => increaseQuantity(id)}
+                                        variant="info"
                                     >
                                         +
                                     </Button>

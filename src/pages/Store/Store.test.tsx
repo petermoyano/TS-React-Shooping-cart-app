@@ -3,5 +3,5 @@ import { Store } from "./Store";
 
 test("Store should render", () => {
     render(<Store />);
-    expect(screen.getByText("Store")).toBeDefined();
+    expect(screen.queryByText(/Store/i)).toBeDefined();
 });

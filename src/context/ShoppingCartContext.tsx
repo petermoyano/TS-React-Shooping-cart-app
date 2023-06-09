@@ -30,6 +30,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     function getItemQuantity(id: number) {
         return cartItems.find((item) => id === item.id)?.quantity || 0;
     }
+
     function increaseQuantity(id: number) {
         setCartItems((prevItems: CartItem[]) => {
             if (prevItems.find((item) => item.id === id) === undefined) {
