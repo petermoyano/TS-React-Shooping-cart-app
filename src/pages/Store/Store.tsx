@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
-import storeItems from "../data/items.json";
+import storeItems from "../../data/items.json";
 import { v4 as uuidv4 } from "uuid";
-import { StoreItem } from "../components/StoreItem";
+import { StoreItem } from "../../components/StoreItem";
 
 export function Store() {
     return (
